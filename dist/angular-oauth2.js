@@ -13,7 +13,7 @@
         root.angularOAuth2 = factory(root.angular, "ngCookies", root.queryString, "ngStorage");
     }
 })(this, function(angular, ngCookies, queryString, ngStorage) {
-    var ngModule = angular.module("angular-oauth2", [ ngCookies, ngStorage ]).config(oauthConfig).factory("oauthInterceptor", oauthInterceptor).provider("OAuth", OAuthProvider).provider("OAuthToken", OAuthTokenProvider);
+    var ngModule = angular.module("angular-oauth2", [ ngCookies, "ngStorage" ]).config(oauthConfig).factory("oauthInterceptor", oauthInterceptor).provider("OAuth", OAuthProvider).provider("OAuthToken", OAuthTokenProvider);
     function oauthConfig($httpProvider) {
         $httpProvider.interceptors.push("oauthInterceptor");
     }
